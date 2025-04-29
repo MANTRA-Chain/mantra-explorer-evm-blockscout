@@ -48,8 +48,8 @@ helmCharts:
       envFrom:
         - configMapRef:
             name: backend-env-variables
-        - secretRef:
-            name: blockscout-stack-secrets
+        # - secretRef:
+        #     name: blockscout-stack-secrets
     frontend:
        envFrom:
         - configMapRef:
