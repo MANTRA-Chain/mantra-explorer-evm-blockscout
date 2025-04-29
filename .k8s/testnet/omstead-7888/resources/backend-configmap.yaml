@@ -12,3 +12,4 @@ PGPORT=5432
 PGUSER=mantra-chain-testnet-sql-op@mantra-chain-testnet.iam
 PGPASSWORD=noneedtofill
 PGDATABASE=blockscout
+ECTO_USE_SSL=false
