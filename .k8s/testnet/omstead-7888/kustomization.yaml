@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: mantra-dukong-1-applications
 
 resources:
-  # - secrets/backend-secrets.yaml
   - resources/host_mapping.yaml
   - resources/pod_disruption_budget.yaml
   - resources/authproxy.yaml
@@ -48,8 +47,6 @@ helmCharts:
       envFrom:
         - configMapRef:
             name: backend-env-variables
-        # - secretRef:
-        #     name: blockscout-stack-secrets
     frontend:
        envFrom:
         - configMapRef:
