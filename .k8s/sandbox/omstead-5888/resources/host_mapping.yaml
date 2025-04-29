@@ -1,0 +1,45 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Host
+metadata:
+  name: omstead-explorer-evm-canary-mantrachain-dev
+  annotations:
+    external-dns.ambassador-service: emissary-ingress.emissary
+spec:
+  hostname: omstead-explorer.evm-canary.mantrachain.dev
+  acmeProvider:
+    authority: none
+  tlsSecret:
+    name: asia-east2-std.evm-canary.mantrachain.dev-wildcard-tls-secret
+    namespace: emissary
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: omstead-explorer-evm-canary-mantrachain-dev
+spec:
+  hostname: "omstead-explorer.evm-canary.mantrachain.dev"
+  prefix: /
+  service: blockscout-stack-frontend-svc:80
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Host
+metadata:
+  name: blockscout-evm-canary-mantrachain-dev
+  annotations:
+    external-dns.ambassador-service: emissary-ingress.emissary
+spec:
+  hostname: blockscout.evm-canary.mantrachain.dev
+  acmeProvider:
+    authority: none
+  tlsSecret:
+    name: asia-east2-std.evm-canary.mantrachain.dev-wildcard-tls-secret
+    namespace: emissary
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: blockscout-evm-canary-mantrachain-dev
+spec:
+  hostname: "blockscout.evm-canary.mantrachain.dev"
+  prefix: /
+  service: blockscout-stack-blockscout-svc:80
