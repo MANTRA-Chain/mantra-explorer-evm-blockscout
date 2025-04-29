@@ -43,3 +43,5 @@ spec:
   hostname: "blockscout.omstead.io"
   prefix: /
   service: blockscout-stack-blockscout-svc:80
+  allow_upgrade:
+  - websocket
