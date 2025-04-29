@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: mantra-canary-net-1-applications
+namespace: mantra-dukong-1-applications
 
 resources:
   - secrets/backend-secrets.yaml
