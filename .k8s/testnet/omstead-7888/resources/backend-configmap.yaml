@@ -1,0 +1,9 @@
+ETHEREUM_JSONRPC_VARIANT=geth
+ETHEREUM_JSONRPC_HTTP_URL=http://omstead-7888-1-ae2-archive-rpc.omstead-7888-1.svc.mantra-chain-asia-east2-std.mantra-chain-develop.develop:8545
+ETHEREUM_JSONRPC_FALLBACK_HTTP_URL=http://omstead-7888-1-ae2-fullnode-rpc.omstead-7888-1.svc.mantra-chain-asia-east2-std.mantra-chain-develop.develop:8545
+ETHEREUM_JSONRPC_TRACE_URL=http://omstead-7888-1-ae2-archive-rpc.omstead-7888-1.svc.mantra-chain-asia-east2-std.mantra-chain-develop.develop:8545
+ETHEREUM_JSONRPC_FALLBACK_TRACE_URL=http://omstead-7888-1-ae2-fullnode-rpc.omstead-7888-1.svc.mantra-chain-asia-east2-std.mantra-chain-develop.develop:8545
+NETWORK=OMSTEAD
+ETHEREUM_JSONRPC_WS_URL=http://omstead-7888-1-ae2-archive-rpc.omstead-7888-1.svc.mantra-chain-asia-east2-std.mantra-chain-develop.develop:8546
+ETHEREUM_JSONRPC_FALLBACK_WS_URL=http://omstead-7888-1-ae2-fullnode-rpc.omstead-7888-1.svc.mantra-chain-asia-east2-std.mantra-chain-develop.develop:8546
+ETHEREUM_JSONRPC_HTTP_INSECURE=true

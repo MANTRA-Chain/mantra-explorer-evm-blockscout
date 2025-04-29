@@ -1,7 +1,7 @@
-NEXT_PUBLIC_APP_HOST=omstead-explorer.evm-canary.mantrachain.dev
-NEXT_PUBLIC_NETWORK_NAME=OM Chain
+NEXT_PUBLIC_APP_HOST=evm.explorer.omstead.io
+NEXT_PUBLIC_NETWORK_NAME=OMSTEAD
 NEXT_PUBLIC_NETWORK_ID=7888
-NEXT_PUBLIC_API_HOST=blockscout.evm-canary.mantrachain.dev
+NEXT_PUBLIC_API_HOST=blockscout.omstead.io
 NEXT_PUBLIC_NETWORK_ICON=https://raw.githubusercontent.com/cosmos/chain-registry/refs/heads/master/mantrachain/images/OM-Prim-Col.svg
 NEXT_PUBLIC_NETWORK_ICON_DARK=https://raw.githubusercontent.com/cosmos/chain-registry/refs/heads/master/mantrachain/images/OM-Darkmatt.svg
 NEXT_PUBLIC_NETWORK_LOGO=https://raw.githubusercontent.com/cosmos/chain-registry/refs/heads/master/mantrachain/images/OM-Prim-Col.svg

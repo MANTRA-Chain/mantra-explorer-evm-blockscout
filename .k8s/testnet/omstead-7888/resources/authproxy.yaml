@@ -1,0 +1,17 @@
+apiVersion: cloudsql.cloud.google.com/v1
+kind: AuthProxyWorkload
+metadata:
+  name: blockscout-stack
+spec:
+  workloadSelector:
+    kind: "Deployment"
+    selector:
+      matchLabels:
+        app: blockscout-stack-blockscout
+  instances:
+  - connectionString: "mantra-chain-testnet:asia-east2:mantra-chain-testnet-asia-east2-evm-blockscout"
+    port: 5432
+    privateIP: true
+    portEnvName: "DB_PORT"
+    autoIAMAuthN: true
+
