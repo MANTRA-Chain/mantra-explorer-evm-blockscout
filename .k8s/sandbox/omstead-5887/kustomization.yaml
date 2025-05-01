@@ -32,8 +32,6 @@ helmCharts:
   version: 3.0.0
   releaseName: blockscout-stack
   valuesInline:
-    # imagePullSecrets:
-    #   - name: ghcr-mantrachaind-registry-read-secret
     config:
       network:
         id: 5887
@@ -47,10 +45,6 @@ helmCharts:
         enabled: false
     blockscout:
       replicaCount: 2
-      # image:
-      #   repository: ghcr.io/mantra-chain/explorer-evm-blockscout
-      #   pullPolicy: IfNotPresent
-      #   tag: "84276e4"
       envFrom:
         - configMapRef:
             name: backend-env-variables
