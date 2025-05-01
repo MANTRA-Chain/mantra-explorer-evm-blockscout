@@ -1,9 +1,9 @@
 ETHEREUM_JSONRPC_HTTP_URL=http://omstead-7888-1-ae2-archive-rpc.omstead-7888-1.svc.mantra-chain-asia-east2-std.mantra-chain-testnet.testnet:8545
-ETHEREUM_JSONRPC_FALLBACK_HTTP_URLS=https://evm.archive.omstead.io
+ETHEREUM_JSONRPC_FALLBACK_HTTP_URL=https://evm.archive.omstead.io
 ETHEREUM_JSONRPC_TRACE_URL=http://omstead-7888-1-ae2-archive-rpc.omstead-7888-1.svc.mantra-chain-asia-east2-std.mantra-chain-testnet.testnet:8545
-ETHEREUM_JSONRPC_FALLBACK_TRACE_URLS=https://evm.archive.omstead.io
+ETHEREUM_JSONRPC_FALLBACK_TRACE_URL=https://evm.archive.omstead.io
 ETHEREUM_JSONRPC_WS_URL=http://omstead-7888-1-ae2-archive-rpc.omstead-7888-1.svc.mantra-chain-asia-east2-std.mantra-chain-testnet.testnet:8546
-ETHEREUM_JSONRPC_FALLBACK_WS_URLS=https://evm.archive.omstead.io/ws
+ETHEREUM_JSONRPC_FALLBACK_WS_URL=https://evm.archive.omstead.io/ws
 NETWORK=OMSTEAD
 # ETHEREUM_JSONRPC_HTTP_URL=https://evm.archive.omstead.io
 # ETHEREUM_JSONRPC_TRACE_URL=https://evm.archive.omstead.io
