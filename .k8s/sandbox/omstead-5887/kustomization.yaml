@@ -79,3 +79,7 @@ helmCharts:
         max_connections = 500
         shared_buffers = 500MB
         listen_addresses = '*'
+      resources:
+        limits:
+          ephemeral-storage: 1Gi
+
