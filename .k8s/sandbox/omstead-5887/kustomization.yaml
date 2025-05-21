@@ -54,6 +54,8 @@ helmCharts:
        envFrom:
         - configMapRef:
             name: frontend-env-variables 
+    nodeSelector:
+      cloud.google.com/gke-spot: "true"
 
 #
 # Higher Environments: Database should run as cloud-managed service

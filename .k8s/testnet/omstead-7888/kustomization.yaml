@@ -51,3 +51,5 @@ helmCharts:
        envFrom:
         - configMapRef:
             name: frontend-env-variables 
+    nodeSelector:
+      cloud.google.com/gke-spot: "true"
