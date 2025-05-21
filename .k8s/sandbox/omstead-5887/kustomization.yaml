@@ -84,5 +84,3 @@ helmCharts:
       resources:
         limits:
           ephemeral-storage: 1Gi
-      nodeSelector:
-        cloud.google.com/gke-spot: "true"
