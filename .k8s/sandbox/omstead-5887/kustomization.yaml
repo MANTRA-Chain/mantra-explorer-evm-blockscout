@@ -7,6 +7,7 @@ resources:
   - secrets/postgres-secrets.yaml
   - resources/host_mapping.yaml
   - resources/pod_disruption_budget.yaml
+  - resources/scaled_object.yaml
 
 configMapGenerator:
   - envs:

@@ -3,7 +3,7 @@ kind: PodDisruptionBudget
 metadata:
   name: blockscout-stack-backend
 spec:
-  minAvailable: 1
+  maxUnavailable: 1
   selector:
     matchLabels:
       app: blockscout-stack-blockscout
@@ -13,7 +13,7 @@ kind: PodDisruptionBudget
 metadata:
   name: blockscout-stack-frontend
 spec:
-  minAvailable: 1
+  maxUnavailable: 1
   selector:
     matchLabels:
       app: blockscout-stack-frontend
