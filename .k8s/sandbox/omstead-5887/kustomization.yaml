@@ -25,63 +25,84 @@ labels:
     includeTemplates: true
 
 helmCharts:
-#
-# BLOCKSCOUT STACK
-#
-- name: blockscout-stack
-  repo: https://blockscout.github.io/helm-charts
-  version: 3.0.0
-  releaseName: blockscout-stack
-  valuesInline:
-    config:
-      network:
-        id: 5887
-        name: om
-        shortname: om
-        currency:
+  #
+  # BLOCKSCOUT STACK
+  #
+  - name: blockscout-stack
+    repo: https://blockscout.github.io/helm-charts
+    version: 3.0.0
+    releaseName: blockscout-stack
+    valuesInline:
+      config:
+        network:
+          id: 5887
           name: om
-          symbol: OM
-          decimals: 6
-      prometheus:
-        enabled: false
-    blockscout:
-      replicaCount: 2
-      envFrom:
-        - configMapRef:
-            name: backend-env-variables
-        - secretRef:
-            name: blockscout-stack-secrets
-    frontend:
-       envFrom:
-        - configMapRef:
-            name: frontend-env-variables 
-    nodeSelector:
-      cloud.google.com/gke-spot: "true"
+          shortname: om
+          currency:
+            name: om
+            symbol: OM
+            decimals: 6
+        prometheus:
+          enabled: false
+      blockscout:
+        replicaCount: 2
+        envFrom:
+          - configMapRef:
+              name: backend-env-variables
+          - secretRef:
+              name: blockscout-stack-secrets
+        resources:
+          requests:
+            cpu: 200m
+            memory: 1Gi
+          limits:
+            cpu: 1
+            memory: 2Gi
+      frontend:
+        envFrom:
+          - configMapRef:
+              name: frontend-env-variables
+        resources:
+          requests:
+            cpu: 50m
+            memory: 300Mi
+          limits:
+            cpu: 200m
+            memory: 1Gi
+      nodeSelector:
+        cloud.google.com/gke-spot: "true"
 
-#
-# Higher Environments: Database should run as cloud-managed service
-#
-- name: postgresql
-  repo: https://charts.bitnami.com/bitnami
-  version: 13.3.1
-  releaseName: postgresql
-  namespace: mantra-canary-net-1-applications
-  valuesInline:
-    commonAnnotations:
-      argocd.argoproj.io/sync-wave: "-1"
+  #
+  # Higher Environments: Database should run as cloud-managed service
+  #
+  - name: postgresql
+    repo: https://charts.bitnami.com/bitnami
+    version: 13.3.1
+    releaseName: postgresql
+    namespace: mantra-canary-net-1-applications
+    valuesInline:
+      commonAnnotations:
+        argocd.argoproj.io/sync-wave: "-1"
 
-    global:
-      postgresql:
-        auth:
-          database: blockscout
-          username: blockscout
-          existingSecret: blockscout-postgresql-auth-secret
+      global:
+        postgresql:
+          auth:
+            database: blockscout
+            username: blockscout
+            existingSecret: blockscout-postgresql-auth-secret
 
-    primary:
-      configuration: |-
-        max_connections = 500
-        shared_buffers = 500MB
-        listen_addresses = '*'
-      resources:
-        limits:
-          ephemeral-storage: 1Gi
+      primary:
+        configuration: |-
+          max_connections = 500
+          shared_buffers = 500MB
+          listen_addresses = '*'
+        resources:
+          limits:
+            ephemeral-storage: 1Gi
+            cpu: 100m
+            memory: 3Gi
+          requests:
+            cpu: 1
+            memory: 1.5Gi
+        nodeSelector:
+          cloud.google.com/gke-spot: "true"
