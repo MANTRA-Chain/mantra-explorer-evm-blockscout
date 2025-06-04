@@ -1,0 +1,35 @@
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: blockscout-stack-blockscout
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind: Deployment
+    name: blockscout-stack-blockscout
+  updatePolicy:
+    updateMode: "Auto"
+---
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: blockscout-stack-frontend
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind: Deployment
+    name: blockscout-stack-frontend
+  updatePolicy:
+    updateMode: "Auto"
+---
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: postgresql
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind: StatefulSet
+    name: postgresql
+  updatePolicy:
+    updateMode: "Auto"
