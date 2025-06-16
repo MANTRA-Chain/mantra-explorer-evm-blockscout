@@ -23,33 +23,45 @@ labels:
     includeTemplates: true
 
 helmCharts:
-#
-# BLOCKSCOUT STACK
-#
-- name: blockscout-stack
-  repo: https://blockscout.github.io/helm-charts
-  version: 3.0.0
-  releaseName: blockscout-stack
-  valuesInline:
-    config:
-      network:
-        id: 7888
-        name: om
-        shortname: om
-        currency:
+  #
+  # BLOCKSCOUT STACK
+  #
+  - name: blockscout-stack
+    repo: https://blockscout.github.io/helm-charts
+    version: 3.0.0
+    releaseName: blockscout-stack
+    valuesInline:
+      config:
+        network:
+          id: 7888
           name: om
-          symbol: OM
-          decimals: 6
-      prometheus:
-        enabled: false
-    blockscout:
-      replicaCount: 2
-      envFrom:
-        - configMapRef:
-            name: backend-env-variables
-    frontend:
-       envFrom:
-        - configMapRef:
-            name: frontend-env-variables 
-    nodeSelector:
-      cloud.google.com/gke-spot: "true"
+          shortname: om
+          currency:
+            name: om
+            symbol: OM
+            decimals: 6
+        prometheus:
+          enabled: false
+      blockscout:
+        replicaCount: 2
+        envFrom:
+          - configMapRef:
+              name: backend-env-variables
+        resources:
+          requests:
+            cpu: 400m
+            memory: 500Mi
+          limits:
+            cpu: 1
+            memory: 1Gi
+      frontend:
+        envFrom:
+          - configMapRef:
+              name: frontend-env-variables
+        resources:
+          requests:
+            cpu: 50m
+            memory: 300Mi
+          limits:
+            cpu: 200m
+            memory: 1Gi
