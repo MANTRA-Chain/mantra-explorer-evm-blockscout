@@ -1,0 +1,16 @@
+ETHEREUM_JSONRPC_HTTP_URL=http://│ mantra-dukong-1-ae2-archive-rpc.mantra-dukong-1.svc.mantra-chain-asia-east2-std.mantra-chain-testnet.testnet:8545
+ETHEREUM_JSONRPC_FALLBACK_HTTP_URL=https://evm.archive.dukong.mantrachain.io
+ETHEREUM_JSONRPC_TRACE_URL=http://│ mantra-dukong-1-ae2-archive-rpc.mantra-dukong-1.svc.mantra-chain-asia-east2-std.mantra-chain-testnet.testnet:8545
+ETHEREUM_JSONRPC_FALLBACK_TRACE_URL=https://evm.archive.dukong.mantrachain.io
+ETHEREUM_JSONRPC_WS_URL=http://│ mantra-dukong-1-ae2-archive-rpc.mantra-dukong-1.svc.mantra-chain-asia-east2-std.mantra-chain-testnet.testnet:8546
+ETHEREUM_JSONRPC_FALLBACK_WS_URL=https://evm.archive.dukong.mantrachain.io/ws
+NETWORK=DUKONG
+# ETHEREUM_JSONRPC_HTTP_URL=https://evm.archive.omstead.io
+# ETHEREUM_JSONRPC_TRACE_URL=https://evm.archive.omstead.io
+# ETHEREUM_JSONRPC_WS_URL=https://evm.archive.omstead.io/ws
+PGHOST=localhost
+PGPORT=5432
+PGUSER=mantra-chain-testnet-sql-op@mantra-chain-testnet.iam
+PGPASSWORD=noneedtofill
+PGDATABASE=blockscout
+ECTO_USE_SSL=false
