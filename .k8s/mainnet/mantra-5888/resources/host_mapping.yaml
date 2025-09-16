@@ -1,0 +1,36 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Host
+metadata:
+  name: blockscout-mantrascan-io
+  annotations:
+    external-dns.ambassador-service: emissary-ingress.emissary
+spec:
+  hostname: blockscout.mantrascan.io
+  acmeProvider:
+    authority: none
+  tlsSecret:
+    name: mantrascan.io-wildcard-tls-secret
+    namespace: emissary
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: blockscout-mantrascan-io
+spec:
+  hostname: "blockscout.mantrascan.io"
+  prefix: /
+  precedence: 0
+  service: blockscout-stack-frontend-svc:80
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: api-blockscout.mantrascan.io
+spec:
+  hostname: "blockscout.mantrascan.io"
+  prefix: /api
+  precedence: 1
+  rewrite: /
+  service: blockscout-stack-blockscout-svc:80
+  allow_upgrade:
+  - websocket

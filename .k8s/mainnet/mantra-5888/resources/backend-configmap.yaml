@@ -1,0 +1,13 @@
+ETHEREUM_JSONRPC_HTTP_URL=http://mantra-1-ae2-archive-rpc.mantra-1.svc.mantra-chain-asia-east2-std.mantra-chain-mainnet.mainnet:8545
+ETHEREUM_JSONRPC_FALLBACK_HTTP_URL=https://evm.mantrachain.io
+ETHEREUM_JSONRPC_TRACE_URL=http://mantra-1-ae2-archive-rpc.mantra-1.svc.mantra-chain-asia-east2-std.mantra-chain-mainnet.mainnet:8545
+ETHEREUM_JSONRPC_FALLBACK_TRACE_URL=https://evm.mantrachain.io
+ETHEREUM_JSONRPC_WS_URL=http://mantra-1-ae2-archive-rpc.mantra-1.svc.mantra-chain-asia-east2-std.mantra-chain-mainnet.mainnet:8546
+ETHEREUM_JSONRPC_FALLBACK_WS_URL=https://evm.mantrachain.io/ws
+NETWORK=MAINNET
+PGHOST=localhost
+PGPORT=5432
+PGUSER=mantra-chain-mainnet-sql-op@mantra-chain-mainnet.iam
+PGPASSWORD=noneedtofill
+PGDATABASE=blockscout
+ECTO_USE_SSL=false
