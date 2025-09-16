@@ -28,7 +28,8 @@ helmCharts:
   #
   - name: blockscout-stack
     repo: https://blockscout.github.io/helm-charts
-    version: 3.4.1
+    # version: 3.4.1
+    version: 3.0.0
     releaseName: blockscout-stack
     valuesInline:
       config:
