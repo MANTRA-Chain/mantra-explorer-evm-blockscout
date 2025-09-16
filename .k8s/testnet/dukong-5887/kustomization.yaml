@@ -28,8 +28,8 @@ helmCharts:
   #
   - name: blockscout-stack
     repo: https://blockscout.github.io/helm-charts
-    # version: 3.4.1
-    version: 3.0.0
+    version: 3.4.1
+    # version: 3.0.0
     releaseName: blockscout-stack
     valuesInline:
       config:
@@ -44,7 +44,7 @@ helmCharts:
         prometheus:
           enabled: false
       blockscout:
-        replicaCount: 1
+        replicaCount: 2
         envFrom:
           - configMapRef:
               name: backend-env-variables
