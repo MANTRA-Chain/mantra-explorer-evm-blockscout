@@ -30,7 +30,6 @@ spec:
   hostname: "blockscout.mantrascan.io"
   prefix: /blockscout
   precedence: 1
-  rewrite: /
   service: blockscout-stack-blockscout-svc:80
   allow_upgrade:
   - websocket
