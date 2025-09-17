@@ -34,8 +34,8 @@ helmCharts:
       config:
         network:
           id: 5888
-          name: om
-          shortname: om
+          name: MANTRA
+          shortname: OM
           currency:
             name: om
             symbol: OM

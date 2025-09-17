@@ -35,8 +35,8 @@ helmCharts:
       config:
         network:
           id: 5887
-          name: om
-          shortname: om
+          name: Mantra Dukong
+          shortname: Dukong
           currency:
             name: om
             symbol: OM
