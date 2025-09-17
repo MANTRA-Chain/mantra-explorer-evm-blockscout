@@ -28,7 +28,7 @@ metadata:
   name: api-blockscout.mantrascan.io
 spec:
   hostname: "blockscout.mantrascan.io"
-  prefix: /api
+  prefix: /blockscout
   precedence: 1
   rewrite: /
   service: blockscout-stack-blockscout-svc:80

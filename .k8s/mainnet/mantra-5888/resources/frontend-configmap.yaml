@@ -1,10 +1,7 @@
 NEXT_PUBLIC_APP_HOST=blockscout.mantrascan.io
 NEXT_PUBLIC_NETWORK_NAME=DUKONG
 NEXT_PUBLIC_NETWORK_ID=5887
-NEXT_PUBLIC_API_HOST=blockscout.mantrascan.io/api
-# NEXT_PUBLIC_API_BASE_PATH=/
-# NEXT_PUBLIC_API_PROTOCOL=http
-# NEXT_PUBLIC_API_HOST=blockscout-stack-blockscout-svc.mantra-dukong-1-applications.svc.mantra-chain-asia-east2-std.mantra-chain-mainnet.mainnet
+NEXT_PUBLIC_API_HOST=blockscout.mantrascan.io/blockscout
 NEXT_PUBLIC_NETWORK_ICON=https://raw.githubusercontent.com/cosmos/chain-registry/refs/heads/master/mantrachain/images/OM-Prim-Col.svg
 NEXT_PUBLIC_NETWORK_ICON_DARK=https://raw.githubusercontent.com/cosmos/chain-registry/refs/heads/master/mantrachain/images/OM-Darkmatt.svg
 NEXT_PUBLIC_NETWORK_LOGO=https://raw.githubusercontent.com/cosmos/chain-registry/refs/heads/master/mantrachain/images/OM-Prim-Col.svg
