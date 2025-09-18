@@ -19,8 +19,8 @@ metadata:
 spec:
   hostname: "blockscout.mantrascan.io"
   prefix: /
-  precedence: 0
   service: blockscout-stack-frontend-svc:80
+  precedence: 0
 ---
 apiVersion: getambassador.io/v3alpha1
 kind: Mapping
@@ -28,8 +28,33 @@ metadata:
   name: api-blockscout.mantrascan.io
 spec:
   hostname: "blockscout.mantrascan.io"
-  prefix: /blockscout
-  precedence: 1
+  prefix: /api
+  rewrite: /api
   service: blockscout-stack-blockscout-svc:80
   allow_upgrade:
-  - websocket
+    - websocket
+  precedence: 1
+---
+# Backend socket (Phoenix websocket)
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: socket-blockscout.mantrascan.io
+spec:
+  hostname: blockscout.mantrascan.io
+  prefix: /socket
+  service: blockscout-stack-blockscout-svc:80
+  allow_upgrade:
+    - websocket
+  precedence: 1
+---
+# (Optional) public metrics
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: metrics-blockscout.mantrascan.io
+spec:
+  hostname: blockscout.mantrascan.io
+  prefix: /public-metrics
+  service: blockscout-stack-blockscout-svc:80
+  precedence: 1
