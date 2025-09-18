@@ -14,3 +14,6 @@ PGUSER=mantra-chain-testnet-sql-op@mantra-chain-testnet.iam
 PGPASSWORD=noneedtofill
 PGDATABASE=blockscout
 ECTO_USE_SSL=false
+BLOCKSCOUT_HOST=explorer.dukong.io
+BLOCKSCOUT_PROTOCOL=https
+BLOCKSCOUT_PATH=/blockscout
