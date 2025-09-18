@@ -45,3 +45,16 @@ spec:
   service: blockscout-stack-blockscout-svc:80
   allow_upgrade:
   - websocket
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: api-explorer-dukong-io
+spec:
+  hostname: "explorer.dukong.io"
+  prefix: /blockscout
+  rewrite: /
+  precedence: 1
+  service: blockscout-stack-blockscout-svc:80
+  allow_upgrade:
+  - websocket
