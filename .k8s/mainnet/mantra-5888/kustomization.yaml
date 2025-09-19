@@ -39,7 +39,7 @@ helmCharts:
           currency:
             name: om
             symbol: OM
-            decimals: 6
+            decimals: 18
         prometheus:
           enabled: false
       blockscout:
