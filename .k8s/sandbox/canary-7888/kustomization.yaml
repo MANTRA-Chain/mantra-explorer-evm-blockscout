@@ -103,6 +103,8 @@ helmCharts:
       primary:
         pdb:
           maxUnavailable: 1
+        extendedConfiguration: |
+          max_connections = 300
         persistence:
           enabled: true
           size: 20Gi
