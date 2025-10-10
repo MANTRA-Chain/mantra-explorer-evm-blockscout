@@ -1,0 +1,14 @@
+ETHEREUM_JSONRPC_HTTP_URL=http://mantra-canary-net-1-ae2-archive-rpc.mantra-canary-net-1.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox:8545
+ETHEREUM_JSONRPC_FALLBACK_HTTP_URL=https://evm.canary.mantrachain.dev
+ETHEREUM_JSONRPC_TRACE_URL=http://mantra-canary-net-1-ae2-archive-rpc.mantra-canary-net-1.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox:8545
+ETHEREUM_JSONRPC_FALLBACK_TRACE_URL=https://evm.canary.mantrachain.dev
+ETHEREUM_JSONRPC_WS_URL=http://mantra-canary-net-1-ae2-archive-rpc.mantra-canary-net-1.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox:8546
+ETHEREUM_JSONRPC_FALLBACK_WS_URL=https://evm.canary.mantrachain.dev/ws
+NETWORK=CANARY
+BLOCKSCOUT_HOST=blockscout.canary.mantrachain.dev
+BLOCKSCOUT_PROTOCOL=https
+PGHOST=blockscout-canary-postgresql-primary.mantra-canary-net-1.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox
+PGPORT=5432
+PGUSER=blockscout
+PGDATABASE=blockscout
+ECTO_USE_SSL=false

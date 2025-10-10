@@ -1,0 +1,12 @@
+NEXT_PUBLIC_APP_HOST=blockscout.canary.mantrachain.dev
+NEXT_PUBLIC_NETWORK_NAME=CANARY
+NEXT_PUBLIC_NETWORK_ID=7888
+NEXT_PUBLIC_API_HOST=blockscout.canary.mantrachain.dev
+NEXT_PUBLIC_API_BASE_PATH=
+NEXT_PUBLIC_NETWORK_ICON=https://raw.githubusercontent.com/cosmos/chain-registry/refs/heads/master/mantrachain/images/OM-Prim-Col.svg
+NEXT_PUBLIC_NETWORK_ICON_DARK=https://raw.githubusercontent.com/cosmos/chain-registry/refs/heads/master/mantrachain/images/OM-Darkmatt.svg
+NEXT_PUBLIC_NETWORK_LOGO=https://raw.githubusercontent.com/cosmos/chain-registry/refs/heads/master/mantrachain/images/OM-Prim-Col.svg
+NEXT_PUBLIC_NETWORK_LOGO_DARK=https://raw.githubusercontent.com/cosmos/chain-registry/refs/heads/master/mantrachain/images/OM-Darkmatt.svg
+NEXT_PUBLIC_IS_TESTNET=true
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=419f16951e5fc4ba28a57059dbf70441
+NEXT_PUBLIC_NETWORK_RPC_URL=https://rpc.canary.mantrachain.dev
