@@ -19,7 +19,7 @@ metadata:
 spec:
   hostname: "blockscout.canary.mantrachain.dev"
   prefix: /
-  service: blockscout-stack-frontend-svc:80
+  service: blockscout-stack-canary-frontend-svc:80
   precedence: 0
 ---
 apiVersion: getambassador.io/v3alpha1
@@ -30,7 +30,7 @@ spec:
   hostname: "blockscout.canary.mantrachain.dev"
   prefix: /api
   rewrite: /api
-  service: blockscout-stack-blockscout-svc:80
+  service: blockscout-stack-canary-blockscout-svc:80
   allow_upgrade:
     - websocket
   precedence: 1
@@ -43,7 +43,7 @@ metadata:
 spec:
   hostname: blockscout.canary.mantrachain.dev
   prefix: /socket
-  service: blockscout-stack-blockscout-svc:80
+  service: blockscout-stack-canary-blockscout-svc:80
   allow_upgrade:
     - websocket
   precedence: 1
@@ -56,5 +56,5 @@ metadata:
 spec:
   hostname: blockscout.canary.mantrachain.dev
   prefix: /public-metrics
-  service: blockscout-stack-blockscout-svc:80
+  service: blockscout-stack-canary-blockscout-svc:80
   precedence: 1
