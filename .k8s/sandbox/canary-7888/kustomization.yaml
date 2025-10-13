@@ -52,10 +52,10 @@ helmCharts:
         resources:
           requests:
             cpu: 400m
-            memory: 500Mi
+            memory: 2Gi
           limits:
             cpu: 1
-            memory: 1Gi
+            memory: 3Gi
       frontend:
         envFrom:
           - configMapRef:
