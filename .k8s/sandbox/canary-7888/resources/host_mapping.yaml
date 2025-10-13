@@ -8,8 +8,11 @@ spec:
   hostname: blockscout.canary.mantrachain.dev
   acmeProvider:
     authority: none
-  tlsSecret:
-    name: asia-east2-std.canary.mantrachain.dev-wildcard-tls-secret
+  requestPolicy:
+    insecure:
+      action: Route   # serve HTTP (no redirect), no tlsSecret
+  # tlsSecret:
+  #   name: asia-east2-std.canary.mantrachain.dev-wildcard-tls-secret
 ---
 apiVersion: getambassador.io/v3alpha1
 kind: Mapping
