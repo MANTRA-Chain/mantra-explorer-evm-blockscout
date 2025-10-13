@@ -119,6 +119,8 @@ helmCharts:
             cpu: 512m
             memory: 1Gi
       readReplicas:
+        extendedConfiguration: |
+          max_connections = 300
         resources:
           requests:
             ephemeral-storage: 1Gi
