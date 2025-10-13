@@ -43,7 +43,7 @@ helmCharts:
         prometheus:
           enabled: false
       blockscout:
-        replicaCount: 2
+        replicaCount: 1
         envFrom:
           - configMapRef:
               name: blockscout-canary-backend-env-variables
