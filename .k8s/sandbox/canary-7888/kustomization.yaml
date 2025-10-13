@@ -54,8 +54,8 @@ helmCharts:
             cpu: 400m
             memory: 2Gi
           limits:
-            cpu: 1
-            memory: 3Gi
+            cpu: 2
+            memory: 4Gi
       frontend:
         envFrom:
           - configMapRef:
