@@ -1,7 +1,7 @@
-NEXT_PUBLIC_APP_HOST=blockscout.manveniam.mantrachain.io
-NEXT_PUBLIC_NETWORK_NAME=MANVENIAM
+NEXT_PUBLIC_APP_HOST=explorer.inveniam.mantrachain.io
+NEXT_PUBLIC_NETWORK_NAME=Inveniam-1
 NEXT_PUBLIC_NETWORK_ID=58887
-NEXT_PUBLIC_API_HOST=blockscout.manveniam.mantrachain.io
+NEXT_PUBLIC_API_HOST=explorer.inveniam.mantrachain.io
 NEXT_PUBLIC_API_BASE_PATH=
 NEXT_PUBLIC_NETWORK_ICON=https://raw.githubusercontent.com/cosmos/chain-registry/refs/heads/master/mantrachain/images/OM-Prim-Col.svg
 NEXT_PUBLIC_NETWORK_ICON_DARK=https://raw.githubusercontent.com/cosmos/chain-registry/refs/heads/master/mantrachain/images/OM-Darkmatt.svg
