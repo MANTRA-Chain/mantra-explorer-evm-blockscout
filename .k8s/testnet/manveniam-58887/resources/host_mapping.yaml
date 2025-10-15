@@ -1,0 +1,60 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Host
+metadata:
+  name: blockscout-manveniam-mantrachain-io
+  annotations:
+    external-dns.ambassador-service: emissary-ingress.emissary
+spec:
+  hostname: blockscout.manveniam.mantrachain.io
+  acmeProvider:
+    authority: none
+  tlsSecret:
+    name: asia-east2-std.manveniam.mantrachain.io-wildcard-tls-secret
+    namespace: emissary
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: blockscout-manveniam-mantrachain-io
+spec:
+  hostname: "blockscout.manveniam.mantrachain.io"
+  prefix: /
+  service: manveniam-blockscout-stack-frontend-svc:80
+  precedence: 0
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: api-blockscout-manveniam-mantrachain-io
+spec:
+  hostname: "blockscout.manveniam.mantrachain.io"
+  prefix: /api
+  rewrite: /api
+  service: manveniam-blockscout-stack-blockscout-svc:80
+  allow_upgrade:
+    - websocket
+  precedence: 1
+---
+# Backend socket (Phoenix websocket)
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: socket-blockscout-manveniam-mantrachain-io
+spec:
+  hostname: blockscout.manveniam.mantrachain.io
+  prefix: /socket
+  service: manveniam-blockscout-stack-blockscout-svc:80
+  allow_upgrade:
+    - websocket
+  precedence: 1
+---
+# (Optional) public metrics
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: metrics-blockscout-manveniam-mantrachain-io
+spec:
+  hostname: blockscout.manveniam.mantrachain.io
+  prefix: /public-metrics
+  service: manveniam-blockscout-stack-blockscout-svc:80
+  precedence: 1
