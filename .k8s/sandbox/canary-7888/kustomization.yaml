@@ -43,7 +43,7 @@ helmCharts:
         prometheus:
           enabled: false
       blockscout:
-        replicaCount: 1
+        replicaCount: 2
         envFrom:
           - configMapRef:
               name: blockscout-canary-backend-env-variables
@@ -51,11 +51,11 @@ helmCharts:
               name: blockscout-canary-postgres-password-secret
         resources:
           requests:
-            cpu: 400m
-            memory: 2Gi
-          limits:
             cpu: 2
-            memory: 4Gi
+            memory: 6Gi
+          limits:
+            cpu: 4
+            memory: 8Gi
       frontend:
         envFrom:
           - configMapRef:
