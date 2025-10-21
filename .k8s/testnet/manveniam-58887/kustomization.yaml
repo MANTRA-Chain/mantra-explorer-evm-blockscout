@@ -34,8 +34,8 @@ helmCharts:
       config:
         network:
           id: 58887
-          name: Inveniam-1
-          shortname: Inveniam-1
+          name: Inveniam Chain
+          shortname: Inveniam Chain
           currency:
             name: inveniam
             symbol: NVNM
