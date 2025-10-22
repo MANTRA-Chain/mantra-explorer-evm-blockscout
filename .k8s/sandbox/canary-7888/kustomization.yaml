@@ -115,10 +115,10 @@ helmCharts:
         resources:
           requests:
             ephemeral-storage: 1Gi
-            cpu: 256m
+            cpu: 2
             memory: 3Gi
           limits:
-            cpu: 512m
+            cpu: 3
             memory: 3Gi
       readReplicas:
         extendedConfiguration: |
