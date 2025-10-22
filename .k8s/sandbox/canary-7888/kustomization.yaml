@@ -122,7 +122,7 @@ helmCharts:
             memory: 3Gi
       readReplicas:
         extendedConfiguration: |
-          max_connections = 300
+          max_connections = 500
         resources:
           requests:
             ephemeral-storage: 1Gi
