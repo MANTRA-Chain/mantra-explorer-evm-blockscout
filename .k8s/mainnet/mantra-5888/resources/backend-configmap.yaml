@@ -13,3 +13,4 @@ PGUSER=mantra-chain-mainnet-sql-op@mantra-chain-mainnet.iam
 PGPASSWORD=noneedtofill
 PGDATABASE=blockscout
 ECTO_USE_SSL=false
+FIRST_BLOCK=1

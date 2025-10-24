@@ -29,7 +29,7 @@ metadata:
 spec:
   hostname: "blockscout.mantrascan.io"
   prefix: /api
-  rewrite: /api
+  rewrite: ''
   service: blockscout-stack-blockscout-svc:80
   allow_upgrade:
     - websocket
@@ -43,6 +43,7 @@ metadata:
 spec:
   hostname: blockscout.mantrascan.io
   prefix: /socket
+  rewrite: /socket
   service: blockscout-stack-blockscout-svc:80
   allow_upgrade:
     - websocket
