@@ -51,11 +51,11 @@ helmCharts:
               name: blockscout-canary-postgres-password-secret
         resources:
           requests:
-            cpu: 2
-            memory: 6Gi
+            cpu: 400m
+            memory: 500Mi
           limits:
-            cpu: 4
-            memory: 8Gi
+            cpu: 1
+            memory: 1Gi
       frontend:
         envFrom:
           - configMapRef:
@@ -96,10 +96,7 @@ helmCharts:
       image:
         registry: docker.io
         repository: bitnamilegacy/postgresql
-      architecture: replication
-      replication:
-        synchronousCommit: "remote_apply"
-        numSynchronousReplicas: 1
+      architecture: standalone
       primary:
         pdb:
           maxUnavailable: 1
@@ -115,26 +112,8 @@ helmCharts:
         resources:
           requests:
             ephemeral-storage: 1Gi
-            cpu: 2
-            memory: 3Gi
-          limits:
-            cpu: 3
-            memory: 3Gi
-      readReplicas:
-        extendedConfiguration: |
-          max_connections = 500
-        resources:
-          requests:
-            ephemeral-storage: 1Gi
             cpu: 256m
             memory: 500Mi
           limits:
             cpu: 512m
             memory: 1Gi
-        pdb:
-          maxUnavailable: 1
-        persistence:
-          enabled: true
-          size: 20Gi
-        persistentVolumeClaimRetentionPolicy:
-          enabled: true

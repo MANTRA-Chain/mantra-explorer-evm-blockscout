@@ -28,7 +28,7 @@ metadata:
 spec:
   hostname: "blockscout.canary.mantrachain.dev"
   prefix: /api
-  rewrite: /api
+  rewrite: ""
   service: blockscout-stack-canary-blockscout-svc:80
   allow_upgrade:
     - websocket
@@ -42,6 +42,7 @@ metadata:
 spec:
   hostname: blockscout.canary.mantrachain.dev
   prefix: /socket
+  rewrite: /socket
   service: blockscout-stack-canary-blockscout-svc:80
   allow_upgrade:
     - websocket
