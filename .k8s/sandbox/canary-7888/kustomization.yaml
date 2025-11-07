@@ -112,8 +112,8 @@ helmCharts:
         resources:
           requests:
             ephemeral-storage: 1Gi
-            cpu: 256m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2Gi
           limits:
-            cpu: 512m
-            memory: 1Gi
+            cpu: 1
+            memory: 4Gi
