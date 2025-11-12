@@ -35,10 +35,10 @@ helmCharts:
         network:
           id: 7888
           name: Mantra Canary
-          shortname: OM
+          shortname: MANTRA
           currency:
-            name: om
-            symbol: OM
+            name: mantra
+            symbol: MANTRA
             decimals: 18
         prometheus:
           enabled: false
