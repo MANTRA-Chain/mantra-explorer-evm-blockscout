@@ -47,7 +47,7 @@ helmCharts:
         image:
           repository: ghcr.io/blockscout/blockscout
           pullPolicy: IfNotPresent
-          tag: "9.0.2.commit.2ab549a6-indexer"
+          tag: "9.0.2.commit.2ab549a6"
         separateApi:
           enabled: true
         envFrom:
