@@ -16,6 +16,12 @@ configMapGenerator:
       - resources/frontend-configmap.yaml
     name: frontend-env-variables
 
+patches:
+  - path: resources/migrations-job-patch.yaml
+    target:
+      kind: Job
+      name: manveniam-blockscout-stack-blockscout-migrations
+
 # enable logging in logs explorer
 labels:
   - pairs:
