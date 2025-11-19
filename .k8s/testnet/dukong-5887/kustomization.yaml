@@ -6,6 +6,7 @@ resources:
   - resources/host_mapping.yaml
   - resources/pod_disruption_budget.yaml
   - resources/authproxy.yaml
+  - resources/scaled_object.yaml
 
 configMapGenerator:
   - envs:
@@ -14,6 +15,12 @@ configMapGenerator:
   - envs:
       - resources/frontend-configmap.yaml
     name: frontend-env-variables
+
+patches:
+  - path: resources/migrations-job-patch.yaml
+    target:
+      kind: Job
+      name: blockscout-stack-blockscout-migrations
 
 # enable logging in logs explorer
 labels:
@@ -44,7 +51,21 @@ helmCharts:
         prometheus:
           enabled: false
       blockscout:
-        replicaCount: 2
+        replicaCount: 1
+        image:
+          repository: ghcr.io/blockscout/blockscout
+          pullPolicy: IfNotPresent
+          tag: "9.0.2.commit.2ab549a6"
+        separateApi:
+          enabled: true
+          replicaCount: 2
+          resources:
+            limits:
+              cpu: 1
+              memory: 2Gi
+            requests:
+              cpu: 250m
+              memory: 1Gi
         envFrom:
           - configMapRef:
               name: backend-env-variables
