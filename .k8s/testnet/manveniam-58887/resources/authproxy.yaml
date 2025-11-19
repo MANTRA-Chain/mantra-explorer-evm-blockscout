@@ -26,7 +26,7 @@ spec:
       matchLabels:
         app: manveniam-blockscout-stack-blockscout-indexer
   instances:
-  - connectionString: "mantra-chain-testnet:asia-east2:mantra-chain-testnet-asia-east2-skynet-evm-blockscout"
+  - connectionString: "mantra-chain-testnet:asia-east2:mantra-chain-testnet-asia-east2-manveniam-evm-blockscout"
     port: 5432
     privateIP: true
     portEnvName: "DB_PORT"
@@ -43,7 +43,7 @@ spec:
       matchLabels:
         app.kubernetes.io/name: blockscout-stack
   instances:
-  - connectionString: "mantra-chain-testnet:asia-east2:mantra-chain-testnet-asia-east2-skynet-evm-blockscout"
+  - connectionString: "mantra-chain-testnet:asia-east2:mantra-chain-testnet-asia-east2-manveniam-evm-blockscout"
     port: 5432
     privateIP: true
     portEnvName: "DB_PORT"
