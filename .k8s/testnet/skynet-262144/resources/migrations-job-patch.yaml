@@ -1,0 +1,8 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: skynet-blockscout-stack-blockscout-migrations
+spec:
+  template:
+    spec:
+      serviceAccountName: skynet-blockscout-stack
