@@ -44,7 +44,21 @@ helmCharts:
         prometheus:
           enabled: false
       blockscout:
-        replicaCount: 2
+        replicaCount: 1
+        image:
+          repository: ghcr.io/blockscout/blockscout
+          pullPolicy: IfNotPresent
+          tag: "9.0.2.commit.2ab549a6"
+        separateApi:
+          enabled: true
+          replicaCount: 2
+          resources:
+            limits:
+              cpu: 1
+              memory: 2Gi
+            requests:
+              cpu: 250m
+              memory: 1Gi
         envFrom:
           - configMapRef:
               name: backend-env-variables
