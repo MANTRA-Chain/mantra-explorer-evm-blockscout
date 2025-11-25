@@ -11,3 +11,4 @@ NEXT_PUBLIC_NETWORK_LOGO_DARK=https://raw.githubusercontent.com/cosmos/chain-reg
 NEXT_PUBLIC_IS_TESTNET=true
 NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=419f16951e5fc4ba28a57059dbf70441
 NEXT_PUBLIC_NETWORK_RPC_URL=https://rpc.canary.mantrachain.dev
+NEXT_PUBLIC_HOMEPAGE_CHARTS=['daily_txs','coin_price']
