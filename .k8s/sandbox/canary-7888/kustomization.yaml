@@ -7,6 +7,7 @@ resources:
   - resources/pod_disruption_budget.yaml
   - resources/scaled_object.yaml
   - secrets/blockscout-canary-postgres-password-secret.yaml
+  - secrets/blockscout-canary-secrets.yaml
 
 configMapGenerator:
   - envs:
@@ -64,6 +65,8 @@ helmCharts:
               name: blockscout-canary-backend-env-variables
           - secretRef:
               name: blockscout-canary-postgres-password-secret
+          - secretRef:
+              name: blockscout-canary-secrets
         resources:
           requests:
             cpu: 400m
@@ -132,3 +135,28 @@ helmCharts:
           limits:
             cpu: 1
             memory: 4Gi
+
+
+  ########################################################
+  ## Redis
+  ########################################################
+  - name: redis
+    repo: oci://registry-1.docker.io/bitnamicharts
+    version: 23.1.1
+    releaseName: blockscout-canary-redis
+    valuesInline:
+      architecture: standalone
+      auth:
+        enabled: false
+
+      master:
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        
+        persistence:
+          enabled: false
