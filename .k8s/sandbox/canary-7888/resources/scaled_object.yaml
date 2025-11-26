@@ -41,45 +41,45 @@ spec:
             value: 1
             periodSeconds: 60
 ---
-apiVersion: keda.sh/v1alpha1
-kind: ScaledObject
-metadata:
-  name: blockscout-stack-canary-frontend
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: blockscout-stack-canary-frontend
+# apiVersion: keda.sh/v1alpha1
+# kind: ScaledObject
+# metadata:
+#   name: blockscout-stack-canary-frontend
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: blockscout-stack-canary-frontend
 
-  minReplicaCount: 2
-  maxReplicaCount: 10
+#   minReplicaCount: 2
+#   maxReplicaCount: 10
 
-  pollingInterval: 30
-  cooldownPeriod: 300
+#   pollingInterval: 30
+#   cooldownPeriod: 300
 
-  triggers:
-    - type: cpu
-      metricType: Utilization
-      metadata:
-        value: "80"
+#   triggers:
+#     - type: cpu
+#       metricType: Utilization
+#       metadata:
+#         value: "80"
 
-    - type: memory
-      metricType: Utilization
-      metadata:
-        value: "80"
+#     - type: memory
+#       metricType: Utilization
+#       metadata:
+#         value: "80"
 
-  advanced:
-    horizontalPodAutoscalerConfig:
-      behavior:
-        scaleUp:
-          stabilizationWindowSeconds: 30
-          policies:
-          - type: Pods
-            value: 2
-            periodSeconds: 30
-        scaleDown:
-          stabilizationWindowSeconds: 200
-          policies:
-          - type: Pods
-            value: 1
-            periodSeconds: 60
+#   advanced:
+#     horizontalPodAutoscalerConfig:
+#       behavior:
+#         scaleUp:
+#           stabilizationWindowSeconds: 30
+#           policies:
+#           - type: Pods
+#             value: 2
+#             periodSeconds: 30
+#         scaleDown:
+#           stabilizationWindowSeconds: 200
+#           policies:
+#           - type: Pods
+#             value: 1
+#             periodSeconds: 60
