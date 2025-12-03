@@ -45,8 +45,8 @@ helmCharts:
           name: Mantra Dukong
           shortname: Dukong
           currency:
-            name: om
-            symbol: OM
+            name: mantra
+            symbol: MANTRA
             decimals: 18
         prometheus:
           enabled: false
