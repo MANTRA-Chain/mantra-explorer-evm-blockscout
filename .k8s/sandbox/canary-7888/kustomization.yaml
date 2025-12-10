@@ -17,6 +17,9 @@ configMapGenerator:
   - envs:
       - resources/frontend-configmap.yaml
     name: blockscout-canary-frontend-env-variables
+  - envs:
+      - resources/blockscout-canary-price-updater.yaml
+    name: blockscout-canary-price-updater-env-variables
 
 # enable logging in logs explorer
 labels:
@@ -192,8 +195,5 @@ helmCharts:
         envFrom:
           - name: blockscout-canary-price-updater-secrets
             type: secret
-        env:
-          # Price update interval in milliseconds
-          UPDATE_INTERVAL_MS: "'900000'"
-          HEALTH_CHECK_PORT: "'8080'"
-          TOKENS_CONFIG: '[{"contractAddressHash":"0xbff8f85cd6d07012c7369180990a684da3e37bea","coinGeckoId":"tether","symbol":"USDT","name":"Tether USD","iconUrl":"data:image/png;base64,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"}]'
+          - name: blockscout-canary-price-updater-env-variables
+            type: configMap
