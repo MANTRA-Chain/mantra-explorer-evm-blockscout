@@ -48,3 +48,20 @@ spec:
     privateIP: true
     portEnvName: "DB_PORT"
     autoIAMAuthN: true
+---
+apiVersion: cloudsql.cloud.google.com/v1
+kind: AuthProxyWorkload
+metadata:
+  name: blockscout-price-updater
+spec:
+  workloadSelector:
+    kind: "Job"
+    selector:
+      matchLabels:
+        app.kubernetes.io/name: blockscout-price-updater
+  instances:
+  - connectionString: "mantra-chain-mainnet:asia-east2:mantra-chain-mainnet-asia-east2-evm-blockscout"
+    port: 5432
+    privateIP: true
+    portEnvName: "DB_PORT"
+    autoIAMAuthN: true

@@ -7,6 +7,7 @@ resources:
   - resources/pod_disruption_budget.yaml
   - resources/authproxy.yaml
   - resources/hpa.yaml
+  - secrets/blockscout-price-updater-secret.yaml
 
 configMapGenerator:
   - envs:
@@ -15,6 +16,10 @@ configMapGenerator:
   - envs:
       - resources/frontend-configmap.yaml
     name: frontend-env-variables
+  - envs:
+      - resources/blockscout-price-updater.yaml
+    name: blockscout-price-updater-env-variables
+
 
 patches:
   - path: resources/migrations-job-patch.yaml
@@ -86,3 +91,59 @@ helmCharts:
           limits:
             cpu: 200m
             memory: 1Gi
+
+  ########################################################
+  ## BLOCKSCOUT PRICE UPDATER
+  ########################################################
+
+  - name: generic-helm-chart
+    repo: https://mantra-chain.github.io/generic-helm-chart
+    version: 0.4.9
+    releaseName: blockscout-price-updater
+    valuesInline:
+      nameOverride: blockscout-price-updater
+      fullnameOverride: blockscout-price-updater
+      service:
+        enabled: false
+      deployment:
+        image:
+          repository: ghcr.io/mantra-chain-tech/blockscout-price-updater
+          pullPolicy: IfNotPresent
+          tag: "b6b3ef7"
+        imagePullSecrets:
+          - name: ghcr-mantra-chain-applications-registry-read-secret
+        service:
+          port:
+            - containerPort: 8080
+              protocol: TCP
+              name: http
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 30
+          failureThreshold: 3
+          timeoutSeconds: 1
+          successThreshold: 1
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 30
+          failureThreshold: 3
+          timeoutSeconds: 1
+          successThreshold: 1
+        resources:
+          requests:
+            cpu: "52m"
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "512Mi"
+        envFrom:
+          - name: blockscout-price-updater-secret
+            type: secret
+          - name: blockscout-price-updater-env-variables
+            type: configmap
