@@ -103,6 +103,9 @@ helmCharts:
     valuesInline:
       nameOverride: blockscout-price-updater
       fullnameOverride: blockscout-price-updater
+      serviceAccount:
+        create: false
+        name: blockscout-stack # Use this existing service account defined in terraform
       service:
         enabled: false
       deployment:
