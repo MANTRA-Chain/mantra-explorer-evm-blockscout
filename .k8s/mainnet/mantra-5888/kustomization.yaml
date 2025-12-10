@@ -109,7 +109,7 @@ helmCharts:
         image:
           repository: ghcr.io/mantra-chain-tech/blockscout-price-updater
           pullPolicy: IfNotPresent
-          tag: "b6b3ef7"
+          tag: "948bfa7"
         imagePullSecrets:
           - name: ghcr-mantra-chain-applications-registry-read-secret
         service:
@@ -143,7 +143,7 @@ helmCharts:
             cpu: "200m"
             memory: "512Mi"
         envFrom:
-          - name: blockscout-price-updater-secret
-            type: secret
+          # - name: blockscout-price-updater-secret
+          #   type: secret
           - name: blockscout-price-updater-env-variables
             type: configmap
