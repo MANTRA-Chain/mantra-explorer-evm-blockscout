@@ -55,7 +55,7 @@ metadata:
   name: blockscout-price-updater
 spec:
   workloadSelector:
-    kind: "Job"
+    kind: "Deployment"
     selector:
       matchLabels:
         app.kubernetes.io/name: blockscout-price-updater
