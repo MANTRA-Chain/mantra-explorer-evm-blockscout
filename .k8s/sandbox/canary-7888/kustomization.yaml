@@ -196,4 +196,4 @@ helmCharts:
           - name: blockscout-canary-price-updater-secret
             type: secret
           - name: blockscout-canary-price-updater-env-variables
-            type: configMap
+            type: configmap
