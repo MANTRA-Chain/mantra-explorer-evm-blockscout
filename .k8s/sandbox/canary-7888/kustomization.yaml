@@ -193,7 +193,7 @@ helmCharts:
             cpu: "200m"
             memory: "512Mi"
         envFrom:
-          - name: blockscout-canary-price-updater-secrets
+          - name: blockscout-canary-price-updater-secret
             type: secret
           - name: blockscout-canary-price-updater-env-variables
             type: configMap
