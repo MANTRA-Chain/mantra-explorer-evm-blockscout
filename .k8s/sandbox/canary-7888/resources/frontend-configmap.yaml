@@ -12,4 +12,4 @@ NEXT_PUBLIC_IS_TESTNET=true
 NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=419f16951e5fc4ba28a57059dbf70441
 NEXT_PUBLIC_NETWORK_RPC_URL=https://rpc.canary.mantrachain.dev
 NEXT_PUBLIC_HOMEPAGE_CHARTS=['daily_txs','coin_price']
-NEXT_PUBLIC_CONTRACT_INFO_API_HOST=https://blockscout-api-proxy-nonprod.mantra-c1b.workers.dev
+NEXT_PUBLIC_CONTRACT_INFO_API_HOST=https://contracts-info.blockscout.canary.mantrachain.dev
