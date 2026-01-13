@@ -45,8 +45,8 @@ helmCharts:
           name: Mantra Skynet
           shortname: Skynet
           currency:
-            name: om
-            symbol: OM
+            name: mantra
+            symbol: MANTRA
             decimals: 18
         prometheus:
           enabled: false
