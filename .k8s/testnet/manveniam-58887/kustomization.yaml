@@ -44,8 +44,8 @@ helmCharts:
           name: Inveniam Chain
           shortname: Inveniam Chain
           currency:
-            name: inveniam
-            symbol: NVNM
+            name: mantra
+            symbol: MANTRA
             decimals: 18
         prometheus:
           enabled: false
