@@ -47,10 +47,10 @@ helmCharts:
         network:
           id: 5888
           name: MANTRA
-          shortname: OM
+          shortname: MANTRA
           currency:
-            name: om
-            symbol: OM
+            name: mantra
+            symbol: MANTRA
             decimals: 18
         prometheus:
           enabled: false
