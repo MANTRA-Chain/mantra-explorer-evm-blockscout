@@ -1,0 +1,29 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: blockscout-stack-manveniam-2-backend
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: blockscout-stack-manveniam-2-blockscout
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: blockscout-stack-manveniam-2-frontend
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: blockscout-stack-manveniam-2-frontend
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: blockscout-stack-manveniam-2-blockscout-indexer
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: blockscout-stack-manveniam-2-blockscout-indexer

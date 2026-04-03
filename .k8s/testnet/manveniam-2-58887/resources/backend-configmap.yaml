@@ -1,0 +1,17 @@
+ETHEREUM_JSONRPC_HTTP_URL=http://manveniam-2-ae2-archive-rpc.manveniam-2.svc.mantra-chain-asia-east2-std.mantra-chain-testnet.testnet:8545
+ETHEREUM_JSONRPC_FALLBACK_HTTP_URL=https://evm.archive.inveniam-2.mantrachain.io
+ETHEREUM_JSONRPC_TRACE_URL=http://manveniam-2-ae2-archive-rpc.manveniam-2.svc.mantra-chain-asia-east2-std.mantra-chain-testnet.testnet:8545
+ETHEREUM_JSONRPC_FALLBACK_TRACE_URL=https://evm.archive.inveniam-2.mantrachain.io
+ETHEREUM_JSONRPC_WS_URL=http://manveniam-2-ae2-archive-rpc.manveniam-2.svc.mantra-chain-asia-east2-std.mantra-chain-testnet.testnet:8546
+ETHEREUM_JSONRPC_FALLBACK_WS_URL=https://evm.archive.inveniam-2.mantrachain.io/ws
+NETWORK=NVNM Chain
+BLOCKSCOUT_HOST=explorer.inveniam-2.mantrachain.io
+BLOCKSCOUT_PROTOCOL=https
+PGHOST=blockscout-manveniam-2-postgresql.mantra-manveniam-2-net-1-applications.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox
+PGPORT=5432
+PGUSER=blockscout
+PGDATABASE=blockscout
+ECTO_USE_SSL=false
+FIRST_BLOCK=1
+POOL_SIZE=25
+POOL_SIZE_API=25
