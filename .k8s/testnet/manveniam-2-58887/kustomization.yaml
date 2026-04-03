@@ -65,8 +65,6 @@ helmCharts:
               name: blockscout-manveniam-2-backend-env-variables
           - secretRef:
               name: blockscout-manveniam-2-postgres-password-secret
-          - secretRef:
-              name: blockscout-manveniam-2-secrets
         resources:
           requests:
             cpu: 400m
