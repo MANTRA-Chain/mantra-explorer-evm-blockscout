@@ -1,0 +1,85 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: blockscout-stack-nvnm-testnet-1-blockscout
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: blockscout-stack-nvnm-testnet-1-blockscout
+
+  minReplicaCount: 2
+  maxReplicaCount: 10
+
+  pollingInterval: 30
+  cooldownPeriod: 300
+
+  triggers:
+    - type: cpu
+      metricType: Utilization
+      metadata:
+        value: "80"
+
+    - type: memory
+      metricType: Utilization
+      metadata:
+        value: "80"
+
+  advanced:
+    horizontalPodAutoscalerConfig:
+      behavior:
+        scaleUp:
+          stabilizationWindowSeconds: 30
+          policies:
+          - type: Pods
+            value: 2
+            periodSeconds: 30
+        scaleDown:
+          stabilizationWindowSeconds: 200
+          policies:
+          - type: Pods
+            value: 1
+            periodSeconds: 60
+---
+# apiVersion: keda.sh/v1alpha1
+# kind: ScaledObject
+# metadata:
+#   name: blockscout-stack-nvnm-testnet-1-frontend
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: blockscout-stack-nvnm-testnet-1-frontend
+
+#   minReplicaCount: 2
+#   maxReplicaCount: 10
+
+#   pollingInterval: 30
+#   cooldownPeriod: 300
+
+#   triggers:
+#     - type: cpu
+#       metricType: Utilization
+#       metadata:
+#         value: "80"
+
+#     - type: memory
+#       metricType: Utilization
+#       metadata:
+#         value: "80"
+
+#   advanced:
+#     horizontalPodAutoscalerConfig:
+#       behavior:
+#         scaleUp:
+#           stabilizationWindowSeconds: 30
+#           policies:
+#           - type: Pods
+#             value: 2
+#             periodSeconds: 30
+#         scaleDown:
+#           stabilizationWindowSeconds: 200
+#           policies:
+#           - type: Pods
+#             value: 1
+#             periodSeconds: 60

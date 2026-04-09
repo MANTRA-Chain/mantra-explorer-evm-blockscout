@@ -1,0 +1,13 @@
+NEXT_PUBLIC_APP_HOST=explorer.evm.testnet.nvnmchain.io
+NEXT_PUBLIC_NETWORK_NAME=NVNM Chain
+NEXT_PUBLIC_NETWORK_ID=787111
+NEXT_PUBLIC_API_HOST=explorer.evm.testnet.nvnmchain.io
+NEXT_PUBLIC_API_BASE_PATH=
+NEXT_PUBLIC_API_SPEC_URL=https://raw.githubusercontent.com/blockscout/blockscout-api-v2-swagger/main/swagger.yaml
+NEXT_PUBLIC_NETWORK_ICON=https://cdn.prod.website-files.com/638a2b5382f66b78cc4e6537/67efc3107c6c56108635513e_fd3be79f2baae07be66dfd7dbc929e68_Inveniam-logo.png
+NEXT_PUBLIC_NETWORK_ICON_DARK=https://cdn.prod.website-files.com/638a2b5382f66b78cc4e6537/67efc3107c6c56108635513e_fd3be79f2baae07be66dfd7dbc929e68_Inveniam-logo.png
+NEXT_PUBLIC_NETWORK_LOGO=https://assets.mantrachain.io/NVNM%20Chain%20RGB%20Logo%20Primary.png
+NEXT_PUBLIC_NETWORK_LOGO_DARK=https://assets.mantrachain.io/NVNM%20Chain%20RGB%20Logo%20Primary.png
+NEXT_PUBLIC_IS_TESTNET=true
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=419f16951e5fc4ba28a57059dbf70441
+NEXT_PUBLIC_NETWORK_RPC_URL=https://evm.testnet.nvnmchain.io

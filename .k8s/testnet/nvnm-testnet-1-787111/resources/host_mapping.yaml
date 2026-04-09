@@ -1,0 +1,61 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Host
+metadata:
+  name: explorer-evm-testnet-nvnmchain-io
+  annotations:
+    external-dns.ambassador-service: emissary-ingress.emissary
+spec:
+  hostname: explorer.evm.testnet.nvnmchain.io
+  acmeProvider:
+    authority: none
+  tlsSecret:
+    name: asia-east2-std.testnet.nvnmchain.io-wildcard-tls-secret
+    namespace: emissary
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: explorer-evm-testnet-nvnmchain-io
+spec:
+  hostname: "explorer.evm.testnet.nvnmchain.io"
+  prefix: /
+  service: blockscout-stack-nvnm-testnet-1-frontend-svc:80
+  precedence: 0
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: api-explorer-evm-testnet-nvnmchain-io
+spec:
+  hostname: "explorer.evm.testnet.nvnmchain.io"
+  prefix: /api
+  rewrite: ''
+  service: blockscout-stack-nvnm-testnet-1-blockscout-svc:80
+  allow_upgrade:
+    - websocket
+  precedence: 1
+---
+# Backend socket (Phoenix websocket)
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: socket-explorer-evm-testnet-nvnmchain-io
+spec:
+  hostname: explorer.evm.testnet.nvnmchain.io
+  prefix: /socket
+  rewrite: /socket
+  service: blockscout-stack-nvnm-testnet-1-blockscout-svc:80
+  allow_upgrade:
+    - websocket
+  precedence: 1
+---
+# (Optional) public metrics
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: metrics-explorer-evm-testnet-nvnmchain-io
+spec:
+  hostname: explorer.evm.testnet.nvnmchain.io
+  prefix: /public-metrics
+  service: blockscout-stack-nvnm-testnet-1-blockscout-svc:80
+  precedence: 1

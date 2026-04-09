@@ -1,0 +1,29 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: blockscout-stack-nvnm-testnet-1-backend
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: blockscout-stack-nvnm-testnet-1-blockscout
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: blockscout-stack-nvnm-testnet-1-frontend
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: blockscout-stack-nvnm-testnet-1-frontend
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: blockscout-stack-nvnm-testnet-1-blockscout-indexer
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: blockscout-stack-nvnm-testnet-1-blockscout-indexer
