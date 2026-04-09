@@ -35,7 +35,7 @@ helmCharts:
     valuesInline:
       config:
         network:
-          id: 58887
+          id: 787111
           name: NVNM Chain
           shortname: NVNM Chain
           currency:
