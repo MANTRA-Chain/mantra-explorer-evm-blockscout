@@ -1,0 +1,16 @@
+ETHEREUM_JSONRPC_HTTP_URL=http://mantra-dryrun-1-ae2-v0-sentry-rpc.mantra-dryrun-1.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox:8545
+ETHEREUM_JSONRPC_FALLBACK_HTTP_URL=https://evm.dryrun.mantrachain.dev
+ETHEREUM_JSONRPC_TRACE_URL=http://mantra-dryrun-1-ae2-v0-sentry-rpc.mantra-dryrun-1.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox:8545
+ETHEREUM_JSONRPC_FALLBACK_TRACE_URL=https://evm.dryrun.mantrachain.dev
+ETHEREUM_JSONRPC_WS_URL=http://mantra-dryrun-1-ae2-v0-sentry-rpc.mantra-dryrun-1.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox:8546
+ETHEREUM_JSONRPC_FALLBACK_WS_URL=https://evm.dryrun.mantrachain.dev/ws
+NETWORK=Dryrun
+BLOCKSCOUT_HOST=blockscout.dryrun.mantrachain.dev
+BLOCKSCOUT_PROTOCOL=https
+PGHOST=blockscout-dryrun-postgresql.mantra-dryrun-1-applications.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox
+PGPORT=5432
+PGUSER=blockscout
+PGDATABASE=blockscout
+ECTO_USE_SSL=false
+FIRST_BLOCK=1
+:
