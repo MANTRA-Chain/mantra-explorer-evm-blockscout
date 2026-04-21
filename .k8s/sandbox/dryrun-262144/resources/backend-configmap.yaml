@@ -13,4 +13,3 @@ PGUSER=blockscout
 PGDATABASE=blockscout
 ECTO_USE_SSL=false
 FIRST_BLOCK=1
-:
