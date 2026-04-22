@@ -112,7 +112,7 @@ helmCharts:
         image:
           repository: ghcr.io/mantra-chain-tech/blockscout-price-updater
           pullPolicy: IfNotPresent
-          tag: "948bfa7"
+          tag: "9d113dd"
         imagePullSecrets:
           - name: ghcr-mantra-chain-applications-registry-read-secret
         service:
