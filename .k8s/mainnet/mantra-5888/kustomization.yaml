@@ -9,6 +9,9 @@ resources:
   - resources/hpa.yaml
   - secrets/blockscout-price-updater-secret.yaml
 
+generatorOptions:
+  disableNameSuffixHash: true
+
 configMapGenerator:
   - envs:
       - resources/backend-configmap.yaml
