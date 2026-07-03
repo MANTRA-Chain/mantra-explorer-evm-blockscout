@@ -9,6 +9,9 @@ resources:
   - resources/namespace.yaml
   - secrets/blockscout-nvnm-testnet-1-postgres-password-secret.yaml
 
+generatorOptions:
+  disableNameSuffixHash: true
+
 configMapGenerator:
   - envs:
       - resources/backend-configmap.yaml

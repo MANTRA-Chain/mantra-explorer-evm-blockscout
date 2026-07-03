@@ -8,6 +8,9 @@ resources:
   - resources/authproxy.yaml
   - resources/scaled_object.yaml
 
+generatorOptions:
+  disableNameSuffixHash: true
+
 configMapGenerator:
   - envs:
       - resources/backend-configmap.yaml
