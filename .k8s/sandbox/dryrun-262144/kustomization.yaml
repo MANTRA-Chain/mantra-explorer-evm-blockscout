@@ -7,6 +7,9 @@ resources:
   - resources/pod_disruption_budget.yaml
   - secrets/blockscout-dryrun-postgres-password-secret.yaml
 
+generatorOptions:
+  disableNameSuffixHash: true
+
 configMapGenerator:
   - envs:
       - resources/backend-configmap.yaml

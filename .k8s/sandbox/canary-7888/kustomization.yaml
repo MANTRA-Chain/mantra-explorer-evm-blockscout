@@ -10,6 +10,9 @@ resources:
   - secrets/blockscout-canary-postgres-password-secret.yaml
   - secrets/blockscout-canary-secrets.yaml
 
+generatorOptions:
+  disableNameSuffixHash: true
+
 configMapGenerator:
   - envs:
       - resources/backend-configmap.yaml
