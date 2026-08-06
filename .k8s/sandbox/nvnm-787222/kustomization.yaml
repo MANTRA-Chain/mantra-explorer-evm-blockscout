@@ -42,7 +42,7 @@ helmCharts:
           currency:
             name: NVNMusd
             symbol: NVNMusd
-            decimals: 18
+            decimals: 16
         prometheus:
           enabled: false
       blockscout:
