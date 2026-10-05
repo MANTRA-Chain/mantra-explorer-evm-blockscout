@@ -1,15 +1,15 @@
 apiVersion: getambassador.io/v3alpha1
 kind: Host
 metadata:
-  name: blockscout-nvnm-mantrachain-dev
+  name: blockscout-nvnm-dryrun-mantrachain-dev
   annotations:
     external-dns.ambassador-service: emissary-ingress.emissary
 spec:
-  hostname: blockscout.nvnm.canary.mantrachain.dev
+  hostname: blockscout.nvnm.dryrun.mantrachain.dev
   acmeProvider:
     authority: none
   tlsSecret:
-    name: asia-east2-std.canary.mantrachain.dev-wildcard-tls-secret
+    name: asia-east2-std.dryrun.mantrachain.dev-wildcard-tls-secret
     # Referenced cross-namespace (same pattern as nvnm-tempo-devnet-1's RPC
     # Host resources) so this app namespace needs no reflector allow-list change.
     namespace: emissary
@@ -17,9 +17,9 @@ spec:
 apiVersion: getambassador.io/v3alpha1
 kind: Mapping
 metadata:
-  name: blockscout-nvnm-mantrachain-dev
+  name: blockscout-nvnm-dryrun-mantrachain-dev
 spec:
-  hostname: "blockscout.nvnm.canary.mantrachain.dev"
+  hostname: "blockscout.nvnm.dryrun.mantrachain.dev"
   prefix: /
   service: blockscout-stack-nvnm-frontend-svc:80
   precedence: 0
@@ -27,9 +27,9 @@ spec:
 apiVersion: getambassador.io/v3alpha1
 kind: Mapping
 metadata:
-  name: api-blockscout.nvnm.canary.mantrachain.dev
+  name: api-blockscout-nvnm-dryrun-mantrachain-dev
 spec:
-  hostname: "blockscout.nvnm.canary.mantrachain.dev"
+  hostname: "blockscout.nvnm.dryrun.mantrachain.dev"
   prefix: /api
   rewrite: ""
   service: blockscout-stack-nvnm-blockscout-svc:80
@@ -41,9 +41,9 @@ spec:
 apiVersion: getambassador.io/v3alpha1
 kind: Mapping
 metadata:
-  name: socket-blockscout.nvnm.canary.mantrachain.dev
+  name: socket-blockscout-nvnm-dryrun-mantrachain-dev
 spec:
-  hostname: blockscout.nvnm.canary.mantrachain.dev
+  hostname: blockscout.nvnm.dryrun.mantrachain.dev
   prefix: /socket
   rewrite: /socket
   service: blockscout-stack-nvnm-blockscout-svc:80
@@ -55,9 +55,9 @@ spec:
 apiVersion: getambassador.io/v3alpha1
 kind: Mapping
 metadata:
-  name: metrics-blockscout.nvnm.canary.mantrachain.dev
+  name: metrics-blockscout-nvnm-dryrun-mantrachain-dev
 spec:
-  hostname: blockscout.nvnm.canary.mantrachain.dev
+  hostname: blockscout.nvnm.dryrun.mantrachain.dev
   prefix: /public-metrics
   service: blockscout-stack-nvnm-blockscout-svc:80
   precedence: 1

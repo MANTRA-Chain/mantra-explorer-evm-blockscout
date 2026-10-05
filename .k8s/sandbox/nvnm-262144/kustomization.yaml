@@ -36,13 +36,13 @@ helmCharts:
     valuesInline:
       config:
         network:
-          id: 787222
-          name: NVNM Devnet
-          shortname: NVNM
+          id: 262144
+          name: NVNM Dryrun
+          shortname: NVNM Dryrun
           currency:
-            name: NVNMusd
-            symbol: NVNMusd
-            decimals: 16
+            name: mUSD
+            symbol: mUSD
+            decimals: 18
         prometheus:
           enabled: false
       blockscout:
