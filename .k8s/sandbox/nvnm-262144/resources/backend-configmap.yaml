@@ -1,8 +1,8 @@
-ETHEREUM_JSONRPC_HTTP_URL=http://nvnm-dryrun-1-ae2-v0-sentry-rpc.nvnm-dryrun-1.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox:8545
-ETHEREUM_JSONRPC_FALLBACK_HTTP_URL=https://rpc.nvnm.dryrun.mantrachain.dev
-ETHEREUM_JSONRPC_TRACE_URL=http://nvnm-dryrun-1-ae2-v0-sentry-rpc.nvnm-dryrun-1.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox:8545
-ETHEREUM_JSONRPC_FALLBACK_TRACE_URL=https://rpc.nvnm.dryrun.mantrachain.dev
-ETHEREUM_JSONRPC_WS_URL=http://nvnm-dryrun-1-ae2-v0-sentry-rpc.nvnm-dryrun-1.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox:8546
+ETHEREUM_JSONRPC_HTTP_URL=http://nvnm-dryrun-1-ae2-v0-sentry-evm.nvnm-dryrun-1.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox:8545
+ETHEREUM_JSONRPC_FALLBACK_HTTP_URL=https://evm.nvnm.dryrun.mantrachain.dev
+ETHEREUM_JSONRPC_TRACE_URL=http://nvnm-dryrun-1-ae2-v0-sentry-evm.nvnm-dryrun-1.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox:8545
+ETHEREUM_JSONRPC_FALLBACK_TRACE_URL=https://evm.nvnm.dryrun.mantrachain.dev
+ETHEREUM_JSONRPC_WS_URL=http://nvnm-dryrun-1-ae2-v0-sentry-evm.nvnm-dryrun-1.svc.mantra-chain-asia-east2-std.mantra-chain-sandbox.sandbox:8546
 ETHEREUM_JSONRPC_FALLBACK_WS_URL=https://evm.nvnm.dryrun.mantrachain.dev/ws
 NETWORK=NVNM Dryrun
 BLOCKSCOUT_HOST=blockscout.nvnm.dryrun.mantrachain.dev
