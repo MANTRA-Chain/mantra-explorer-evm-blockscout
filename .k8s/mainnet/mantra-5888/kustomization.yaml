@@ -124,7 +124,7 @@ helmCharts:
         enabled: false
       deployment:
         image:
-          repository: ghcr.io/mantra-chain-tech/blockscout-price-updater
+          repository: ghcr.io/nvnm-tech/blockscout-price-updater
           pullPolicy: IfNotPresent
           tag: "9d113dd"
         imagePullSecrets:
