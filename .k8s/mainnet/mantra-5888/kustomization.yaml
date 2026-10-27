@@ -92,8 +92,8 @@ helmCharts:
         # Chart default is ghcr.io/blockscout/frontend:latest; upstream releases
         # no longer update that public tag.
         image:
-          repository: ghcr.io/nvnm-tech/frontend
-          tag: "v2.3.5-mantra"
+          repository: ghcr.io/nvnm-tech/blockscout-frontend
+          tag: "v2.12.1-mantra.1"
           pullPolicy: IfNotPresent
         envFrom:
           - configMapRef:
