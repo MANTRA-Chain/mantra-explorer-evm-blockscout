@@ -1,0 +1,11 @@
+# blockscout-stack 3.4.1 renders one serviceAccountName for every component,
+# so the frontend override has to be a post-render patch.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blockscout-stack-frontend
+spec:
+  template:
+    spec:
+      serviceAccountName: blockscout-stack-frontend
+      automountServiceAccountToken: false

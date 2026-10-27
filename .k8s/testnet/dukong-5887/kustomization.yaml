@@ -7,6 +7,7 @@ resources:
   - resources/pod_disruption_budget.yaml
   - resources/authproxy.yaml
   - resources/scaled_object.yaml
+  - resources/frontend-serviceaccount.yaml
 
 generatorOptions:
   disableNameSuffixHash: true
@@ -20,6 +21,10 @@ configMapGenerator:
     name: frontend-env-variables
 
 patches:
+  - path: resources/frontend-sa-patch.yaml
+    target:
+      kind: Deployment
+      name: blockscout-stack-frontend
   - path: resources/migrations-job-patch.yaml
     target:
       kind: Job
@@ -80,6 +85,12 @@ helmCharts:
             cpu: 1
             memory: 1Gi
       frontend:
+        # Chart default is ghcr.io/blockscout/frontend:latest; upstream releases
+        # no longer update that public tag.
+        image:
+          repository: ghcr.io/nvnm-tech/frontend
+          tag: "v2.3.5-mantra"
+          pullPolicy: IfNotPresent
         envFrom:
           - configMapRef:
               name: frontend-env-variables
