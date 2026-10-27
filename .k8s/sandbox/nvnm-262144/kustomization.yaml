@@ -74,6 +74,10 @@ helmCharts:
             cpu: 4
             memory: 4Gi
       frontend:
+        image:
+          repository: ghcr.io/nvnm-tech/blockscout-frontend
+          tag: "v2.12.1-mantra.1"
+          pullPolicy: IfNotPresent
         envFrom:
           - configMapRef:
               name: blockscout-nvnm-frontend-env-variables

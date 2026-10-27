@@ -82,6 +82,10 @@ helmCharts:
             cpu: 1
             memory: 1Gi
       frontend:
+        image:
+          repository: ghcr.io/nvnm-tech/blockscout-frontend
+          tag: "v2.12.1-mantra.1"
+          pullPolicy: IfNotPresent
         envFrom:
           - configMapRef:
               name: blockscout-canary-frontend-env-variables
