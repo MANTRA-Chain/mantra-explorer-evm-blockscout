@@ -7,6 +7,7 @@ resources:
   - resources/pod_disruption_budget.yaml
   - resources/scaled_object.yaml
   - resources/namespace.yaml
+  - resources/frontend-serviceaccount.yaml
   - secrets/blockscout-nvnm-testnet-1-postgres-password-secret.yaml
 
 generatorOptions:
@@ -19,6 +20,12 @@ configMapGenerator:
   - envs:
       - resources/frontend-configmap.yaml
     name: blockscout-nvnm-testnet-1-frontend-env-variables
+
+patches:
+  - path: resources/frontend-sa-patch.yaml
+    target:
+      kind: Deployment
+      name: blockscout-stack-nvnm-testnet-1-frontend
 
 # enable logging in logs explorer
 labels:
@@ -76,6 +83,12 @@ helmCharts:
             cpu: 1
             memory: 1Gi
       frontend:
+        # Chart default is ghcr.io/blockscout/frontend:latest; upstream releases
+        # no longer update that public tag.
+        image:
+          repository: ghcr.io/nvnm-tech/frontend
+          tag: "v2.3.5-mantra"
+          pullPolicy: IfNotPresent
         envFrom:
           - configMapRef:
               name: blockscout-nvnm-testnet-1-frontend-env-variables
